@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+bool armstrong(int n){
+    int copyN = n, sumofcubes = 0;
+    while(n!=0){
+        int digit = n%10;
+        sumofcubes+= (digit*digit*digit);
+        n=n/10;
+    }
+    return (copyN==sumofcubes) ? true  : false;
+}
+
+int main(){
+    int n=153;
+    if (armstrong(n)) cout << n << " is armstrong number." << endl;
+    else cout << n << "is not armstrong number." << endl;
+
+}
