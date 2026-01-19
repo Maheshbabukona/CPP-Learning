@@ -19,7 +19,7 @@ int main(){
     //     }
     //     // cout << endl;
     // }
-    if (linear_search(matrix,key).first!=-1) cout << key << " is found at: [" << linear_search(matrix,key).first << "," << linear_search(matrix,key).second << "]" << end;
+    if (linear_search(matrix,key).first!=-1) cout << key << " is found at: [" << linear_search(matrix,key).first << "," << linear_search(matrix,key).second << "]" << endl;
      
     
 }
