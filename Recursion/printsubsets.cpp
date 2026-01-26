@@ -10,7 +10,7 @@ void printsubsets(vector<int> &arr, vector<int> &ans, int i){
             cout << val << " ";
         }
         cout << endl;
-        return;
+        return; 
     }
     ans.push_back(arr[i]); // include case
     printsubsets(arr,ans,i+1);
