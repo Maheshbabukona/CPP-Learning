@@ -18,7 +18,7 @@ public:
             }
 
             st.push(nums[i]);
-        }
+        } 
 
         return ans;
     }
