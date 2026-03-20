@@ -17,6 +17,16 @@ class Graph{
             }
         }
     }
+    bool isCycle_DFS(int src, vector<bool> &visited, int par){
+        visited[src] = true;
+        for(int v: l[src]){
+            if(!visited[v]){
+                if(isCycle_DFS(v,visited,src)) return true;
+            }
+            else if(v!=par) return true;
+        }
+        return false;
+    }
 public:
     Graph(int V){
         this->V = V;
@@ -64,6 +74,8 @@ public:
         int src=0;
         dfs_helper(src,visited);
     }
+
+    
 
 };
 
