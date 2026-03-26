@@ -7,16 +7,19 @@ using namespace std;
 class Graph{
     int V;
     list<int> *l;
+
+// In the same dfs -- since this is directed.. a cycle can exist if the node is already visited and the same node is present in recursion path.
+
     bool Cycle_detection_DFS_helper(int cur, vector<int> &vis, vector<int> &recpath){
         vis[cur] = true;
-        recpath[cur] = true;
+        recpath[cur] = true; // mark the node as visited in this path
         for(int neigh: l[cur]){
             if(!vis[neigh]){
                 if(Cycle_detection_DFS_helper(neigh, vis,recpath)) return true;
             }
             else if(recpath[neigh]) return true;
         }
-        recpath[cur] = false;
+        recpath[cur] = false; // unmark the node as you complete the recursion run.
         return false;
     }
 public:
